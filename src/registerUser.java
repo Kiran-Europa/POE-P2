@@ -17,7 +17,7 @@ public class registerUser {
     public boolean checkPasswordComplexity(String password) {
         // Regex: at least 8 characters, at least one uppercase, at least one digit, at least one special character (@$!%*?&)
         String regex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
-        // Returns true if the password is NOT correctly formatted (i.e., does not match the regex).
+        // Returns true if the password is NOT correctly formatted
         return password == null || !Pattern.matches(regex, password);
     }
 
@@ -25,7 +25,7 @@ public class registerUser {
     public boolean checkCellPhoneNumber(String cellphone) {
         // Regex: starts with +27 followed by 9 digits
         String regex = "^\\+27\\d{9}$";
-        // Returns true if the cellphone number is NOT correctly formatted (i.e., does not match the regex).
+        // Returns true if the cellphone number is NOT correctly formatted
         return cellphone == null || !Pattern.matches(regex, cellphone);
     }
 

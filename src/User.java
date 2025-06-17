@@ -1,8 +1,8 @@
 import javax.swing.JOptionPane;
 
 public class User {
-    // This static method will be called by QuickChatApp to handle the user registration and login flow.
-    // It returns true if a user successfully registers and logs in, false otherwise.
+    // This method is called by QuickChatApp to handle the user registration and login flow.
+    // returns true if a user successfully registers and logs in, false otherwise.
     public static boolean handleUserRegistrationAndLogin() {
         registerUser user = new registerUser();
         String username;
@@ -36,7 +36,7 @@ public class User {
             if (registrationResult.equals("User registered successfully.")) {
                 registered = true;
             } else {
-                // If registration failed, give option to retry or cancel
+                // If registration failed, give the option to retry or cancel
                 int retryOption = JOptionPane.showConfirmDialog(null, "Registration failed. Do you want to try again?", "Registration Error", JOptionPane.YES_NO_OPTION);
                 if (retryOption == JOptionPane.NO_OPTION) {
                     return false; // User chose not to retry registration
@@ -59,7 +59,7 @@ public class User {
             JOptionPane.showMessageDialog(null, user.returnLoginStatus(isLoggedIn));
 
             if (!isLoggedIn) {
-                // If login failed, give option to retry or cancel
+                // If login failed, give the option to retry or cancel
                 int retryOption = JOptionPane.showConfirmDialog(null, "Login failed. Do you want to try again?", "Login Error", JOptionPane.YES_NO_OPTION);
                 if (retryOption == JOptionPane.NO_OPTION) {
                     return false; // User chose not to retry login
